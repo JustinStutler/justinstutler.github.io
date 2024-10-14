@@ -3,7 +3,7 @@
     opacity: 0;
     animation: bounceIn;
     animation-duration: 1s;
-    animation-delay: 1s;
+    animation-delay: 0.75s;
     animation-fill-mode: forwards;
     min-width: 10px;
   }
@@ -14,7 +14,7 @@
     animation-fill-mode: both;
   
     &:hover {
-      animation: rubberBand 1s;
+      animation: wobble 1s;
       color: #ffd700;
     }
   }

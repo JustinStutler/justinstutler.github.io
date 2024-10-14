@@ -5,6 +5,7 @@ import AnimatedLetters from '../AnimatedLetters'
 //import LogoTitle from '../../assets/images/logo-s.png'
 // import Logo from './Logo'
 import './index.scss'
+import Portrait from '../../assets/images/portrait.jpg'
 
 const Home = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
@@ -30,7 +31,7 @@ const Home = () => {
     useEffect(() => {
         const timeoutId = setTimeout(() => {
             setLetterClass('text-animate-hover');
-        }, 4000);
+        }, 5000);
 
         // Cleanup function to clear the timeout
         return () => clearTimeout(timeoutId);
@@ -42,26 +43,31 @@ const Home = () => {
                 <div className="text-zone">
                     <h1>
                         <span className={letterClass}>H</span>
-                        <span className={`${letterClass} _12`}>i,</span>
+                        <span className={`${letterClass} _12`}>i</span>
+                        <span className={`${letterClass} _13`}>,</span>
                         <br />
-                        <span className={`${letterClass} _13`}>I</span>
-                        <span className={`${letterClass} _14`}>'m</span>
+                        <span className={`${letterClass} _14`}>I</span>
+                        <span className={`${letterClass} _15`}>'</span>
+                        <span className={`${letterClass} _16`}>m</span>
                         <AnimatedLetters
                             letterClass={letterClass}
                             strArray={nameArray}
-                            idx={15}
+                            idx={17}
                         />
                         <br />
                         <AnimatedLetters
                             letterClass={letterClass}
                             strArray={jobArray}
-                            idx={29}
+                            idx={31}
                         />
                     </h1>
-                    <h2>Full-Stack Development, Data Science, AI</h2>
+                    <h2>Full-Stack Development | Data Science | AI</h2>
                     <NavLink to="/contact" className="flat-button">
                         CONTACT ME
                     </NavLink>
+                </div>
+                <div className='img-zone'>
+                    <img className='portrait' src={Portrait}></img>
                 </div>
             </div>
         </>
