@@ -4,7 +4,7 @@ $BackgroundColor: #181818;
 
 .nav-bar {
     background: $BackgroundColor;
-    width: 60px;
+    width: 80px;
     height: 100%;
     position: absolute;
     top: 0;
@@ -63,7 +63,7 @@ $BackgroundColor: #181818;
   
         &:after {
           content: '';
-          font-size: 9px;
+          font-size: 12px;
           letter-spacing: 2px;
           position: absolute;
           bottom: 0;
