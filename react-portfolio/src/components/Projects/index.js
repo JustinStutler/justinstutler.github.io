@@ -64,6 +64,10 @@ const Projects = () => {
                         </button>
                     )}
                 </div>
+                <div style={{ textAlign: 'center', color: '#ffd700', fontSize: '24px', marginTop: '50px' }}>
+                    Work in Progress... Come Back Soon
+                </div>
+
 
                 <div className='carousel-nav'>
                     <button className='arrow left-arrow' onClick={handlePrev}>
@@ -82,6 +86,7 @@ const Projects = () => {
                         &gt;
                     </button>
                 </div>
+
 
             </div>
         </div>
