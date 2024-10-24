@@ -20,7 +20,7 @@ const Sidebar = () => (
             <NavLink exact='true' activeclassname='active' className='home-link' to='/'>
                 <FontAwesomeIcon icon={faHome} color='#4d4d4e' />
             </NavLink>
-            {/* 
+            {/* about page removed from sidebar until complete
             <NavLink exact='true' activeclassname='active' className='about-link' to='/about'>
                 <FontAwesomeIcon icon={faUser} color='#4d4d4e' />
             </NavLink>
