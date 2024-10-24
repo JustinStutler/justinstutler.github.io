@@ -1,94 +1,164 @@
 .projects__container {
-    text-align: center;
-    display: flex; /* Enable flexbox */
-    flex-direction: column; /* Arrange children in a column */
-    justify-content: space-between; /* Space between top and bottom children */
-    height: 80vh;
-    width: 75%; /* Increase width to 90% of the viewport */
-    border: 1px solid #ffd700; /* Optional for better visibility */
-    border-radius: 12px; /* Adjust this value for more or less rounding */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow for depth */
-    margin-top: 10vh;
-    margin-left: 30vh;
-    opacity: 0;
-    overflow: hidden;
-    animation: fadeInUp 1s 1s;
-    animation-fill-mode: forwards;
-    position: relative;
+  text-align: center;
+  display: flex;
+  /* Enable flexbox */
+  flex-direction: column;
+  /* Arrange children in a column */
+  justify-content: space-between;
+  /* Space between top and bottom children */
+  height: 80vh;
+  width: 75%;
+  /* Increase width to 90% of the viewport */
+  border: 1px solid #ffd700;
+  /* Optional for better visibility */
+  border-radius: 12px;
+  /* Adjust this value for more or less rounding */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Optional: add shadow for depth */
+  margin-top: 10vh;
+  margin-left: 30vh;
+  opacity: 0;
+  overflow: hidden;
+  animation: fadeInUp 1s 1s;
+  animation-fill-mode: forwards;
+  position: relative;
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+  height: calc(80vh - 60px);
+  /* Adjust height to account for the nav bar (20px margin + 40px nav height) */
+  padding-bottom: 60px;
+  /* Add padding at the bottom for extra space */
+}
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0; // Start invisible
+    transform: translateY(20px); // Start lower
   }
 
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0; // Start invisible
-      transform: translateY(20px); // Start lower
-    }
-    100% {
-      opacity: 1; // Fully visible
-      transform: translateY(0); // Move back to original position
-    }
+  100% {
+    opacity: 1; // Fully visible
+    transform: translateY(0); // Move back to original position
   }
-  
-  .carousel {
-    padding: 20px;
-    border-radius: 8px; /* Optional for rounded corners */
-  }
-  
-  .carousel-content {
-    margin-bottom: 20px;
-    color: #ffd700;
-    padding-left: 10vh;
-    padding-right: 10vh;
-  }
+}
 
-  .carousel-content h2 {
-    font-size: 4rem; /* Increase font size for the project title */
-  }
-  
-  .carousel-content p {
-    font-size: 2rem; /* Increase font size for the project description */
-  }
-  
-  /* Fixed at the bottom */
-  .carousel-nav {
-    display: flex;
-    align-items: center; /* Center the arrows vertically */
-    justify-content: center; /* Center horizontally */
-    position: fixed; /* Fix the nav to the bottom of the viewport */
-    bottom: 20px; /* Space from the bottom */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust to truly center */
-    width: 100%; /* Full width */
-  }
-  
-  /* Arrows */
-  .arrow {
-    background-color: transparent;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: #ffd700;
-  }
-  
-  /* Dots Styling */
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    margin: 0 10px; /* Add margin to space arrows from dots */
-  }
-  
-  .dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
-    background-color: lightgray;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-    opacity: 50%;
-  }
-  
-  .dot.active {
-    opacity: 100%;
-    background-color: #ffd700;
-  }
-  
+.carousel-content {
+  margin-bottom: 20px;
+  color: #ffd700;
+  padding-left: 10vh;
+  padding-right: 10vh;
+}
+
+.carousel-content h1 {
+  font-size: 4rem;
+}
+
+.carousel-content h3 {
+  text-align: left;
+  font-size: 3em;
+  margin: 0.5em 0 0.25em 0;
+}
+
+.carousel-content h1 {
+  text-align: center;
+  font-size: 3em;
+  margin: 0.5em 0 0.25em 0;
+}
+
+.carousel-content p {
+  text-align: left;
+  font-size: 2em;
+  margin: 0.15em 0 1em 0;
+  color: white;
+}
+
+.carousel-content pre {
+  text-align: left;
+  font-size: 1.25em;
+  color: white;
+}
+
+.carousel {
+  padding: 20px;
+  border-radius: 8px;
+  overflow-y: auto;
+  /* Enable vertical scrolling for this section */
+  flex-grow: 1;
+  /* Allow the carousel to grow and fill available space */
+}
+
+.carousel-nav {
+  display: flex;
+  align-items: center;
+  /* Center the arrows vertically */
+  justify-content: center;
+  /* Center horizontally */
+  position: fixed;
+  /* Fix the nav to the bottom of the viewport */
+  bottom: 20px;
+  /* Space from the bottom */
+  left: 50%;
+  /* Center horizontally */
+  transform: translateX(-50%);
+  /* Adjust to truly center */
+  width: 100%;
+  /* Full width */
+  z-index: 10;
+  /* Ensure it stays above other content */
+}
+
+
+/* Arrows */
+.arrow {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ffd700;
+}
+
+/* Dots Styling */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin: 0 10px;
+  /* Add margin to space arrows from dots */
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: lightgray;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  opacity: 50%;
+}
+
+.dot.active {
+  opacity: 100%;
+  background-color: #ffd700;
+}
+
+/* Hide default scrollbar */
+::-webkit-scrollbar {
+  width: 4px; /* Adjust the width to your preference */
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+  background: transparent; /* Track background */
+}
+
+/* Scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: #ffd700; /* Scrollbar color */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Scrollbar thumb hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background: #ffd700; /* Change color on hover */
+}

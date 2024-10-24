@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
-import Resume from '../../assets/images/resume.pdf'
+import Resume from '../../assets/pdfs/resume.pdf'
 
 // import env vars
 const userId = process.env.REACT_APP_EMAILJS_USER_ID;
