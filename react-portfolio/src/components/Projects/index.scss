@@ -47,21 +47,24 @@
   margin-bottom: 20px;
   color: #ffd700;
   padding-left: 10vh;
-  padding-right: 10vh;
+  padding-right: 10vh; 
 }
 
-.carousel-content h1 {
-  font-size: 4rem;
-}
-
-.carousel-content h3 {
-  text-align: left;
-  font-size: 3em;
-  margin: 0.5em 0 0.25em 0;
+.carousel-content img {
+  display: block;
+  margin: 0; /* Removes any default centering margins */
+  padding: 0;
+  text-align: left; /* Ensures left alignment */
 }
 
 .carousel-content h1 {
   text-align: center;
+  font-size: 3em;
+  margin: 0.5em 0 0.25em 0;
+}
+
+.carousel-content h3 {
+  text-align: left;
   font-size: 3em;
   margin: 0.5em 0 0.25em 0;
 }
@@ -78,6 +81,7 @@
   font-size: 1.25em;
   color: white;
 }
+
 
 .carousel {
   padding: 20px;
@@ -162,3 +166,4 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #ffd700; /* Change color on hover */
 }
+

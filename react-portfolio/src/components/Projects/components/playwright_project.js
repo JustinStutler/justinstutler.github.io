@@ -43,9 +43,9 @@ test('testName', async ({ page }) => {
     ...`}</code>
             </pre>
             <h3>Display</h3>
-            <img src={Playwright_img_1} alt="Playwright Image 1" />
+            <img src={Playwright_img_1} alt="Playwright Image 1" className='code_img'/>
             <p>Console output showing the successful verification of the first 5 articles on Hacker News, confirming they are listed in the correct order from newest to oldest.</p>
-            <img src={Playwright_img_2} alt="Playwright Image 2" />
+            <img src={Playwright_img_2} alt="Playwright Image 2" className='code_img'/>
             <p>Console output displaying the verification of 100 articles on Hacker News, validating that the entire set is correctly sorted from newest to oldest, ensuring accurate chronological order.</p>
             <h3>Reflection</h3>
             <p>As my first QA experience, this project introduced me to automated testing with Playwright. I learned how to handle real-world QA challenges, like data validation and efficiency. It gave me a solid understanding of how QA improves software reliability and sparked my interest in testing.</p>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './index.scss';
 // Import your project components
 import Playwright_Project from './components/playwright_project';
@@ -7,27 +7,41 @@ import Catan_Project from './components/catan_project';
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const carouselRef = useRef(null); // Changed to carousel ref
   const projects = [<Playwright_Project />, <PDF_to_Txt_Project />, <Catan_Project />];
+
+  const resetScroll = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+      console.log("Scroll reset"); // Debugging line to ensure the function is called
+    }
+  };
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? projects.length - 1 : prevIndex - 1
     );
+    resetScroll();
   };
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === projects.length - 1 ? 0 : prevIndex + 1
     );
+    resetScroll();
+  };
+
+  const handleDotClick = (index) => {
+    setCurrentIndex(index);
+    resetScroll();
   };
 
   return (
     <div className='projects__container'>
-      <div className='carousel'>
+      <div className='carousel' ref={carouselRef}> {/* Attach ref here */}
         <div className='carousel-content'>
           {projects[currentIndex]}
         </div>
-
         <div className='carousel-nav'>
           <button className='arrow left-arrow' onClick={handlePrev}>
             &lt;
@@ -37,7 +51,7 @@ const Projects = () => {
               <span
                 key={index}
                 className={`dot ${index === currentIndex ? 'active' : ''}`}
-                onClick={() => setCurrentIndex(index)}
+                onClick={() => handleDotClick(index)}
               ></span>
             ))}
           </div>
