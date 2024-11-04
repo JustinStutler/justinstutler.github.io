@@ -10,6 +10,10 @@ $BackgroundColor: #181818;
     top: 0;
     z-index: 3;
     min-height: 500px;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center; 
   
     .logo {
       display: block;
@@ -138,57 +142,44 @@ $BackgroundColor: #181818;
   .hamburger-icon, .close-icon {
     display: none;
   }
-  
-  
-  @media screen and (max-width: 1200px) {
-    .nav-bar { 
-      background: transparent;
-      position: initial;
-      height: auto;
-      min-height: auto;
-  
-       ul, nav {
-        display: none;
-       }
-  
-       nav {
-        width: 100%;
-        top: 0;
-        left: 0;
-        background: $BackgroundColor;
-        height: 100%;
-        margin: 0;
-        z-index: 2;
-        position: fixed;
-  
-        &.mobile-show {
-          display: block;
-        }
-  
-        a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-  
-        a:after {
-          opacity: 1;
-          position: initial;
-          width: auto;
-          margin-left: 10PX;
-        }
-  
-        a svg {
-          opacity: 1 !important;
-        }
-       }
-  
-       .hamburger-icon,
-       .close-icon {
-          position: absolute;
-          top: 15px;
-          right: 15px;
-          display: block;
-       }
+
+  .hamburger-button {
+    margin-top: 10px; // Adjust margin for spacing at the top
+    background: transparent; // Make background transparent
+    border: none; // Remove border
+    cursor: pointer; // Change cursor to pointer
+    padding: 10px; // Add some padding
+
+    &:hover {
+        color: $HighlightColor; // Change color on hover
     }
+}
+
+  
+  
+@media (max-width: 1000px) { 
+  .nav-bar {
+    width: 100%; // Make the sidebar full width at the bottom
+    height: 60px; // Set a smaller height for the bottom sidebar
+    position: fixed; // Fixed position to keep it at the bottom
+    bottom: -450px; // Start with sidebar off the screen
+    top: auto; // Remove top positioning
+    transition: bottom 0.3s ease; // Add transition for smooth movement
   }
+
+  nav {
+    height: 60px; // Allow nav to adjust to the new smaller height
+    display: flex; // Use flex to layout items in a row
+    justify-content: space-around; // Space items evenly
+  }
+
+  a {
+    font-size: 16px; // Smaller font size for bottom sidebar
+    line-height: 40px; // Adjust line-height for vertical centering
+  }
+
+  .nav-bar.open {
+    bottom: 0; // Move back into view when open
+  }
+}
+

@@ -1,14 +1,14 @@
 import React, { useState, useRef } from 'react';
 import './index.scss';
-// Import your project components
+// Import project components
 import Playwright_Project from './components/playwright_project';
 import PDF_to_Txt_Project from './components/pdf_to_text_project';
-import Catan_Project from './components/catan_project';
+import Catan_Project from './components/catan_project'; // hidden until completed
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const carouselRef = useRef(null); // Changed to carousel ref
-  const projects = [<Playwright_Project />, <PDF_to_Txt_Project />, <Catan_Project />];
+  const carouselRef = useRef(null); 
+  const projects = [<Playwright_Project />, <PDF_to_Txt_Project />]; {/* insert project components here */}
 
   const resetScroll = () => {
     if (carouselRef.current) {

@@ -80,32 +80,6 @@
   }
 }
 
-
-
-@media screen and (max-width: 1200px) {
-
-  .tags,
-  .home-page h1:before,
-  .home-page h1:after {
-    display: none;
-  }
-
-  .home-page .text-zone {
-    position: initial;
-    width: 100%;
-    transform: none;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-
-  .home-page .flat-button {
-    float: none;
-    display: block;
-    margin: 20px auto 0 auto;
-    width: 124px;
-  }
-}
-
 .container {
   display: flex;
 }
@@ -121,30 +95,52 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  width: 100%;
-  max-width: 600px;
-  margin: 20px auto;
+  width: 100%;               /* Make the container full width */
+  max-width: 600px;         /* Maximum width for the container */
+  margin: 20px auto;        /* Center the container */
   border: 2px solid transparent; /* Start with a transparent border */
-  border-radius: 10px;          /* Optional: rounded corners */
+  border-radius: 10px;      /* Optional: rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow effect */
-  position: relative;            /* Ensure positioning context */
+  position: relative;        /* Ensure positioning context */
   transition: border 0.3s ease; /* Smooth transition for border */
-  height: 80vh;
 }
 
+/* Ensure the portrait image fills the container */
 .portrait {
-  width: 100%;                  /* Make the image responsive */
-  height: auto;                 /* Maintain aspect ratio */
-  object-fit: cover;            /* Cover the container */
+  width: 100%;              /* Make the image responsive */
+  height: 100%;             /* Ensure the image fills the height of the img-zone */
+  object-fit: cover;        /* Cover the container without distortion */
   transition: transform 0.3s ease; /* Smooth transition for transformation */
 }
 
 /* Apply the golden border and enlarge the image on hover */
 .img-zone:hover {
-  border: 2px solid #ffd700;    /* Change border to golden on hover */
+  border: 2px solid #ffd700; /* Change border to golden on hover */
 }
 
 .img-zone:hover .portrait {
-  transform: scale(1.1);        /* Enlarge image to 110% on hover */
-  z-index: 1;                   /* Bring the image above other elements */
+  transform: scale(1.1);     /* Enlarge image to 110% on hover */
+  z-index: 1;                /* Bring the image above other elements */
 }
+
+
+
+/* smaller screen */
+@media (max-width: 1000px) { 
+  /* Adjust font sizes for smaller screens */
+  h1 {
+    font-size: 32px !important;   /* Smaller font size */
+    line-height: 40px;            /* Adjust line height as needed */
+  }
+
+  h2 {
+    font-size: 9px !important;    /* Smaller font size */
+  }
+
+  .flat-button {
+    font-size: 11px !important;   /* Smaller font size */
+    padding: 8px 14px;            /* Adjust padding for the button */
+  }
+}
+
+
