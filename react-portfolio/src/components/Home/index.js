@@ -7,6 +7,7 @@ import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 import Portrait from '../../assets/images/portrait.jpg'
 import { useMediaQuery } from 'react-responsive';
+import Resume from '../../assets/pdfs/resume.pdf';
 
 
 const Home = () => {
@@ -76,9 +77,9 @@ const Home = () => {
                                     />
                                 </h1>
                                 <h2>Full-Stack Development | Data Science | AI</h2>
-                                <NavLink to="/contact" className="flat-button">
-                                    CONTACT ME
-                                </NavLink>
+                                <a href="/path-to-resume.pdf" download="My_Resume.pdf">
+                                    <button className='flat-button'>Download Resume</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -111,9 +112,9 @@ const Home = () => {
                                     />
                                 </h1>
                                 <h2>Full-Stack Development | Data Science | AI</h2>
-                                <NavLink to="/contact" className="flat-button">
-                                    CONTACT ME
-                                </NavLink>
+                                <a href={Resume} download="Resume.pdf">
+                                    <button className='flat-button'>Download Resume</button>
+                                </a>
                             </div>
                         </div>
                         <div className='right'>

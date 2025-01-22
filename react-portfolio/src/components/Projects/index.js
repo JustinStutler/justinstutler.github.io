@@ -3,12 +3,12 @@ import './index.scss';
 // Import project components
 import Playwright_Project from './components/playwright_project';
 import PDF_to_Txt_Project from './components/pdf_to_text_project';
-import Catan_Project from './components/catan_project'; // hidden until completed
+// import Catan_Project from './components/catan_project'; // hidden until completed
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef(null); 
-  const projects = [<Playwright_Project />, <PDF_to_Txt_Project />]; {/* insert project components here */}
+  const projects = [<PDF_to_Txt_Project />, <Playwright_Project />]; {/* insert project components here */}
 
   const resetScroll = () => {
     if (carouselRef.current) {

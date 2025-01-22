@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Resume_pdf from '../../../assets/pdfs/resume.pdf';
 import Resume_txt from '../../../assets/txts/resume.txt';
+import pdfToAudioImg from '../../../assets/images/SignInPage.JPG';
+import pdfToTxtVideo from './pdf_to_txt_video.mp4'; // Adjust the path if needed
 
 const PDF_to_Txt_Project = () => {
     const [resumeContent, setResumeContent] = useState('');
@@ -16,68 +18,35 @@ const PDF_to_Txt_Project = () => {
 
     return (
         <div>
-            <h1>PDF-to-Text - Python</h1>
+            <h1>PDF-Audio - Python</h1>
+            <div className='image-container'>
+                <img src={pdfToAudioImg} alt='failed to load img' />
+                <a href='https://pdf-audio.netlify.app/'>Demo Available Here</a>
+            </div>
+            <h3>How to Use</h3>
+            <ul>
+                <li>Create an Account</li>
+                <li>Upload a PDF</li>
+                <li>Click the Convert Icon and wait to receive an audio playback</li>
+            </ul>
             <h3>Project Overview</h3>
             <p>
-                I needed to get the text data from PDFs but was unable to just copy-paste.
-                By utilizing Optical Character Recognition (OCR), the code I wrote can take a PDF file
-                as an input and provide a text file containing the text data as output.
+                This web application transforms PDF documents into high-quality audio playback using advanced Optical Character Recognition (OCR) technology. The platform provides a secure, user-authenticated environment for document processing and audio conversion, enabling efficient consumption of written content through audio format.
             </p>
+
             <h3>Technologies Used</h3>
             <p>
-                Python, Tesseract OCR, pdf2image, PIL (Python Imaging Library).
+                React.js with Redux for frontend development, Node.js/Express.js backend architecture, MongoDB for data persistence, Tesseract OCR for text extraction, Sharp for image preprocessing, and Google Text-to-Speech (gTTS) for audio synthesis. Additional tools include JWT for authentication, pdf2image and PIL for PDF processing, and Axios for API integration.
             </p>
-            <h3>Challenges and Solutions</h3>
+
+            <h3>Technical Challenges and Solutions</h3>
             <p>
-                One major challenge was ensuring the OCR could handle various PDF formats and text layouts.
-                I needed to store the images in an array in the correct order to ensure the text data was processed accurately.
-                Additionally, I implemented preprocessing steps to enhance image quality before the OCR processing.
+                A significant technical hurdle involved optimizing the accuracy of text extraction from diverse PDF formats. This was addressed through implementation of image preprocessing using Sharp to enhance document quality, integration of Tesseract OCR with custom configuration for improved text recognition, and development of a robust error handling system for various PDF formats.
             </p>
-            <h3>Results</h3>
+
+            <h3>Implementation Results</h3>
             <p>
-                The project successfully extracts text from the provdied pdf document with high accuracy,
-                enabling easier data retrieval and manipulation even in cases where access to the text data is not provided.
-            </p>
-            <h3>Code (available on GitHub)</h3>
-            <pre>
-                <code>{`
-# import modules
-from pdf2image import convert_from_path
-from PIL import Image
-import pytesseract
-
-name = ''
-
-# images [] stores images from pdf
-images = convert_from_path(name + '.pdf')
-
-# create list [] to store text
-textList = []
-
-for image in images:
-    # grab text from images using Tesseract's OCR
-    text = pytesseract.image_to_string(image)
-
-    # add text to list []
-    textList.append(text)
-
-# Create and save text to a text file
-with open(name + '.txt', 'w', encoding='utf-8') as file:
-    for text in textList:
-        file.write(text + '\n\n')  # Add extra newline for separation between pages
-`}</code>
-            </pre>
-            <h3>PDF</h3>
-            <div className="pdfDisplay">
-                <iframe id="pdfViewer" src={Resume_pdf} frameBorder="0" title="Resume"></iframe>
-            </div>
-            <h3>PDF Text Content</h3>
-            <pre>{resumeContent}</pre>
-            <h3>Reflection</h3>
-            <p>
-                This project enhanced my understanding of OCR technology and its application in real-world
-                scenarios. I learned about the challenges of text recognition and the importance of data
-                preprocessing.
+                The application successfully delivers secure user authentication, efficient PDF processing, high-accuracy text extraction, and natural-sounding audio playback. Users can manage their documents through an intuitive interface, upload PDFs for processing, and access generated audio content. The system maintains exceptional accuracy in text extraction while producing clear, natural speech synthesis output.
             </p>
         </div>
     );
