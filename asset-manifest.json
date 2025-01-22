@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c6d6cc2c.css",
-    "main.js": "/static/js/main.80597d84.js",
+    "main.js": "/static/js/main.f4e99468.js",
     "static/js/453.bb257cf5.chunk.js": "/static/js/453.bb257cf5.chunk.js",
     "static/media/pdf_to_txt_video.mp4": "/static/media/pdf_to_txt_video.ff539555cd5c9dc271b7.mp4",
     "static/media/portrait.jpg": "/static/media/portrait.5862b201ab14c3d9a10e.jpg",
@@ -9,15 +9,15 @@
     "static/media/resume.pdf": "/static/media/resume.ab8f6a73b819412c8fa9.pdf",
     "static/media/helvetica-neu.ttf": "/static/media/helvetica-neu.8a19678078a6b21c8057.ttf",
     "static/media/playwright_test_5.JPG": "/static/media/playwright_test_5.5a5540081c800b6cd9d6.JPG",
-    "static/media/SignInPage.JPG": "/static/media/SignInPage.771bed9ba99054e2eac9.JPG",
+    "static/media/SignInPage.JPG": "/static/media/SignInPage.31cd5926bc982f72a519.JPG",
     "static/media/resume.txt": "/static/media/resume.cbca212db73bbd42b1ed.txt",
     "index.html": "/index.html",
     "main.c6d6cc2c.css.map": "/static/css/main.c6d6cc2c.css.map",
-    "main.80597d84.js.map": "/static/js/main.80597d84.js.map",
+    "main.f4e99468.js.map": "/static/js/main.f4e99468.js.map",
     "453.bb257cf5.chunk.js.map": "/static/js/453.bb257cf5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c6d6cc2c.css",
-    "static/js/main.80597d84.js"
+    "static/js/main.f4e99468.js"
   ]
 }
