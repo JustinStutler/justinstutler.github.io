@@ -1,28 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import Resume_pdf from '../../../assets/pdfs/resume.pdf';
-import Resume_txt from '../../../assets/txts/resume.txt';
 import pdfToAudioImg from '../../../assets/images/SignInPage.JPG';
-import pdfToTxtVideo from './pdf_to_txt_video.mp4'; // Adjust the path if needed
 
 const PDF_to_Txt_Project = () => {
-    const [resumeContent, setResumeContent] = useState('');
-
-    useEffect(() => {
-        const fetchResumeText = async () => {
-            const response = await fetch(Resume_txt);
-            const text = await response.text();
-            setResumeContent(text);
-        };
-        fetchResumeText();
-    }, []);
 
     return (
         <div>
             <h1>PDF-Audio - Python</h1>
             <div className='image-container'>
                 <img src={pdfToAudioImg} alt='failed to load img' />
-                <a href='https://pdf-audio.netlify.app/'>Demo Available Here</a>
             </div>
+            <h3>Demo</h3>
+            <a href='https://pdf-audio.netlify.app/'>Demo Here (please wait up to 1 minute for server to start)</a>
+            <h3>Figma</h3>
+            <a href='https://www.figma.com/design/45UcGXCof4wME3DiSKfKM3/Convert-Mobile-App-Design?node-id=0-1&t=facF4wPkPG8YFKVW-1'>View Design File</a>
             <h3>How to Use</h3>
             <ul>
                 <li>Create an Account</li>
@@ -31,22 +20,30 @@ const PDF_to_Txt_Project = () => {
             </ul>
             <h3>Project Overview</h3>
             <p>
-                This web application transforms PDF documents into high-quality audio playback using advanced Optical Character Recognition (OCR) technology. The platform provides a secure, user-authenticated environment for document processing and audio conversion, enabling efficient consumption of written content through audio format.
+                A web app that converts PDFs to audio using OCR technology. Users can securely upload documents and listen to them in high-quality audio format.
             </p>
 
             <h3>Technologies Used</h3>
+            <ul>
+                <li>React.js with Redux for frontend development</li>
+                <li>Node.js/Express.js backend architecture</li>
+                <li>MongoDB for data persistence</li>
+                <li>Tesseract OCR for text extraction</li>
+                <li>Sharp for image preprocessing</li>
+                <li>Google Text-to-Speech (gTTS) for audio synthesis</li>
+                <li>JWT for authentication</li>
+                <li>pdf2image and PIL for PDF processing</li>
+                <li>Axios for API integration</li>
+            </ul>
+
+            <h3>Technical Challenges</h3>
             <p>
-                React.js with Redux for frontend development, Node.js/Express.js backend architecture, MongoDB for data persistence, Tesseract OCR for text extraction, Sharp for image preprocessing, and Google Text-to-Speech (gTTS) for audio synthesis. Additional tools include JWT for authentication, pdf2image and PIL for PDF processing, and Axios for API integration.
+                Enhanced text extraction accuracy from various PDF formats through Sharp preprocessing, custom Tesseract OCR configuration, and robust error handling.
             </p>
 
-            <h3>Technical Challenges and Solutions</h3>
+            <h3>Key Features</h3>
             <p>
-                A significant technical hurdle involved optimizing the accuracy of text extraction from diverse PDF formats. This was addressed through implementation of image preprocessing using Sharp to enhance document quality, integration of Tesseract OCR with custom configuration for improved text recognition, and development of a robust error handling system for various PDF formats.
-            </p>
-
-            <h3>Implementation Results</h3>
-            <p>
-                The application successfully delivers secure user authentication, efficient PDF processing, high-accuracy text extraction, and natural-sounding audio playback. Users can manage their documents through an intuitive interface, upload PDFs for processing, and access generated audio content. The system maintains exceptional accuracy in text extraction while producing clear, natural speech synthesis output.
+                Secure authentication, PDF processing, accurate text extraction, and natural audio playback through an intuitive user interface.
             </p>
         </div>
     );
